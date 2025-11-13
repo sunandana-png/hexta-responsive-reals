@@ -91,7 +91,7 @@ export function Navbar() {
 
             {/* Services Dropdown */}
             <div
-              className="relative"
+              className="relative p-2"
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => {
                 setIsServicesOpen(false)
