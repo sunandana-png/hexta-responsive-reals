@@ -1,4 +1,3 @@
-
 "use client"
 
 import Link from "next/link"
@@ -19,7 +18,7 @@ const servicesData = {
   },
   Engineering: {
     name: "Engineering Services",
-    href: "/services/engineering",
+    href: "/services/engineering/",
     subServices: [
       { name: "Maximizing Potential", href: "/services/engineering/maximizing-potential" },
       { name: "Structural Analysis", href: "/services/engineering/structural" },
@@ -75,8 +74,8 @@ export function Navbar() {
             <Logo />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6 mr-4">
+          {/* Desktop Navigation - Moved to Right with ml-auto */}
+          <nav className="hidden md:flex items-center space-x-6 ml-auto">
             {menuItems.map((item) => (
               <Link
                 key={item.name}
@@ -120,24 +119,30 @@ export function Navbar() {
 
               {/* Main Services Dropdown */}
               {isServicesOpen && (
-                <div className="absolute left-0 mt-2 w-[240px] rounded-lg shadow-lg bg-background border border-border z-50">
-                  <div className="p-2 space-y-1">
+                <div className="absolute left-0 mt-2 w-[260px] rounded-lg shadow-lg bg-background border border-border z-50">
+                  <div className="p-3 space-y-2">
                     {/* IT Services */}
                     <Link
                       href={servicesData.IT.href}
-                      className="block px-3 py-2 rounded-md text-sm font-semibold text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                      className="block px-4 py-2.5 rounded-md text-sm font-semibold text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                     >
                       {servicesData.IT.name}
                     </Link>
 
-                    {/* Engineering Services */}
+                    {/* Engineering Services - WITH CLICK ACTION */}
                     <div
                       className="relative group"
                       onMouseEnter={() => setIsEngineeringOpen(true)}
                       onMouseLeave={() => setIsEngineeringOpen(false)}
                     >
-                      <button
-                        className="w-full flex justify-between items-center px-3 py-2 rounded-md text-sm font-semibold text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                      <Link
+                        href={servicesData.Engineering.href}
+                        onClick={() => {
+                          // Close dropdowns on click
+                          setIsServicesOpen(false)
+                          setIsEngineeringOpen(false)
+                        }}
+                        className="w-full flex justify-between items-center px-4 py-2.5 rounded-md text-sm font-semibold text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                       >
                         {servicesData.Engineering.name}
                         <RiArrowRightSLine
@@ -146,17 +151,21 @@ export function Navbar() {
                             isEngineeringOpen && "translate-x-0.5"
                           )}
                         />
-                      </button>
+                      </Link>
 
                       {/* Engineering Submenu */}
                       {isEngineeringOpen && (
-                        <div className="absolute top-0 left-full ml-1 w-[250px] rounded-lg shadow-lg bg-background border border-border z-50">
-                          <div className="p-2 space-y-1">
+                        <div className="absolute top-0 left-full ml-2 w-[280px] rounded-lg shadow-lg bg-background border border-border z-50">
+                          <div className="p-3 space-y-1">
                             {servicesData.Engineering.subServices.map((service) => (
                               <Link
                                 key={service.name}
                                 href={service.href}
-                                className="block px-3 py-1.5 text-sm rounded-md text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                                onClick={() => {
+                                  setIsServicesOpen(false)
+                                  setIsEngineeringOpen(false)
+                                }}
+                                className="block px-4 py-2 text-sm rounded-md text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                               >
                                 {service.name}
                               </Link>
@@ -185,15 +194,13 @@ export function Navbar() {
                 {item.name}
               </Link>
             ))}
+
+            {/* Theme Toggle - Now at the end */}
+            <ModeToggle />
           </nav>
 
-          {/* Theme Toggle */}
-          <div className="hidden md:block">
-            <ModeToggle />
-          </div>
-
           {/* Mobile Menu */}
-          <div className="flex md:hidden items-center gap-2">
+          <div className="flex md:hidden items-center gap-2 ml-auto">
             <ModeToggle />
 
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -280,6 +287,17 @@ export function Navbar() {
                               </Link>
                             </SheetClose>
 
+                            {/* Mobile Engineering Services Link - WITH CLICK ACTION */}
+                            <SheetClose asChild>
+                              <Link
+                                href={servicesData.Engineering.href}
+                                onClick={() => setIsOpen(false)}
+                                className="block px-3 py-2 text-sm font-semibold text-foreground hover:bg-accent hover:text-accent-foreground rounded-md"
+                              >
+                                {servicesData.Engineering.name}
+                              </Link>
+                            </SheetClose>
+
                             <div className="ml-3 mt-1 space-y-1 pl-3 border-l border-border">
                               {servicesData.Engineering.subServices.map((service) => (
                                 <SheetClose asChild key={service.name}>
@@ -296,6 +314,17 @@ export function Navbar() {
                           </div>
                         )}
                       </div>
+
+                      {menuItemsAfterServices.map((item) => (
+                        <MobileNavLink
+                          key={item.path}
+                          href={item.path}
+                          active={pathname === item.path}
+                          onOpenChange={() => setIsOpen(false)}
+                        >
+                          {item.name}
+                        </MobileNavLink>
+                      ))}
                     </div>
                   </nav>
                 </div>
