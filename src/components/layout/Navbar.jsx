@@ -18,13 +18,12 @@ const servicesData = {
   },
   Engineering: {
     name: "Engineering Services",
-    href: "/services/engineering/",
+    href: "/services/engineering",
     subServices: [
       { name: "Maximizing Potential", href: "/services/engineering/maximizing-potential" },
       { name: "Structural Analysis", href: "/services/engineering/structural" },
-      { name: "Civil Engineering", href: "/services/engineering/civil" },
-      { name: "InnovReverseative 3D Engineering", href: "/services/engineering/innovative-3d-engineering" },
-      { name: " Engineering", href: "/services/engineering/reverse-engineering" },
+      { name: "Innovative 3D Engineering", href: "/services/engineering/innovative-3d-engineering" },
+      { name: "Engineering", href: "/services/engineering/reverse-engineering" },
       { name: "Process Engineering", href: "/services/engineering/process-engineering" },
       { name: "Environmental Solutions", href: "/services/engineering/environmental-solutions" },
       { name: "Corporate Liasoning", href: "/services/engineering/corporate-liasoning" },
@@ -120,11 +119,11 @@ export function Navbar() {
               {/* Main Services Dropdown */}
               {isServicesOpen && (
                 <div className="absolute left-0 mt-2 w-[260px] rounded-lg shadow-lg bg-background border border-border z-50">
-                  <div className="p-3 space-y-2">
+                  <div className="p-3 space-y-3">
                     {/* IT Services */}
                     <Link
                       href={servicesData.IT.href}
-                      className="block px-4 py-2.5 rounded-md text-sm font-semibold text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                      className="block px-3.5 py-2.5 rounded-md text-sm font-semibold text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                     >
                       {servicesData.IT.name}
                     </Link>
@@ -142,7 +141,7 @@ export function Navbar() {
                           setIsServicesOpen(false)
                           setIsEngineeringOpen(false)
                         }}
-                        className="w-full flex justify-between items-center px-4 py-2.5 rounded-md text-sm font-semibold text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                        className="w-full flex justify-between items-center px-3.5 py-2.5 rounded-md text-sm font-semibold text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                       >
                         {servicesData.Engineering.name}
                         <RiArrowRightSLine
@@ -155,7 +154,7 @@ export function Navbar() {
 
                       {/* Engineering Submenu */}
                       {isEngineeringOpen && (
-                        <div className="absolute top-0 left-full ml-2 w-[280px] rounded-lg shadow-lg bg-background border border-border z-50">
+                         <div className="absolute top-0 left-full ml-2 w-[280px] rounded-lg shadow-xl bg-white dark:bg-gray-950 border border-border z-50">
                           <div className="p-3 space-y-1">
                             {servicesData.Engineering.subServices.map((service) => (
                               <Link

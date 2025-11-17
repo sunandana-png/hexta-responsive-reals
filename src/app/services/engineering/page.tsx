@@ -8,11 +8,10 @@ const PreBidContent = () => {
   return (
     <div>
       <p className="font-bold md:text-4xl text-xl text-white">
-        Pre-Bid Engineering
+        Maximizing Potential
       </p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Our Pre-bid services include comprehensive coverage of all client requirements with enhanced cost estimation support.
-      </p>
+        We specialize in 3D engineering and design services in the oil and gas sector.      </p>
     </div>
   );
 };
@@ -21,10 +20,10 @@ const FEEDContent = () => {
   return (
     <div>
       <p className="font-bold md:text-4xl text-xl text-white">
-        FEED & Detailed Engineering
+        Innovative 3D Engineering Solutions
       </p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        We adopt combination of in-built automation tools and checklists for engineering activities including documents, drawings and intelligent models.
+        This document details a company's 3D engineering and design services tailored for various industries, specifically focusing on the oil and gas sector.
       </p>
     </div>
   );
@@ -34,11 +33,11 @@ const AsBuiltContent = () => {
   return (
     <div>
       <p className="font-bold md:text-4xl text-xl text-white">
-        As-Built Engineering
+        Reverse Engineering
       </p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Comprehensive As-Built Engineering services including site surveys, laser scanning, 3D modeling, and updating of drawings and documents.
-      </p>
+        specialized engineering services that leverage FARO 3D scanning technology. These services focus on capturing precise digital data of physical objects and environments for industrial and architectural use cases.    
+         </p>
     </div>
   );
 };
@@ -47,11 +46,10 @@ const FabricationContent = () => {
   return (
     <div>
       <p className="font-bold md:text-4xl text-xl text-white">
-        Fabrication & Construction Support
+        Process Engineering
       </p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        High-precision engineering support services for fabrication and construction projects with advanced methodologies.
-      </p>
+        We design energy-efficient, safe, and cost-effective process systems using advanced simulation and engineering methodologies.      </p>
     </div>
   );
 };
@@ -60,11 +58,9 @@ const ProcessSimulationContent = () => {
   return (
     <div>
       <p className="font-bold md:text-4xl text-xl text-white">
-        Process Simulation, Sustainability and Quality Risk Analysis
-      </p>
+        Environmental Solutions For All Industries      </p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Our Process Simulation services help in optimizing operations and enhancing productivity through advanced modeling techniques.
-      </p>
+        A comprehensive approach focused on mitigating ecological harm and promoting sustainability through systemic changes in technology, policy, and operations      </p>
     </div>
   );
 };
@@ -72,11 +68,10 @@ const OG3DContent = () => {
   return (
     <div>
       <p className="font-bold md:text-4xl text-xl text-white">
-        3D Solutions for Oil & Gas Industry
+        Corporate Liasioning
       </p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        High-precision engineering support services for 3D modeling and visualization in the oil and gas sector.
-      </p>
+        Facilitate understanding, bridge gaps, and ensure smooth coordination to resolve conflicts or achieve shared objectives.       </p>
     </div>
   );
 };
@@ -84,11 +79,10 @@ const ReverseContent = () => {
   return (
     <div>
       <p className="font-bold md:text-4xl text-xl text-white">
-        Reverse Engineering through FARO Scanners
+        Legal Services
       </p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        High-precision engineering support services for reverse engineering using FARO scanners.
-      </p>
+        we provide expert legal support across project lifecycles, offering contract management, compliance advisory, and risk mitigation to safeguard your business interests      </p>
     </div>
   );
 };
