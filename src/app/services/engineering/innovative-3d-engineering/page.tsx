@@ -157,7 +157,7 @@ export default function LandingPage() {
               <div>
                 <div className="relative h-96 rounded-lg overflow-hidden bg-gradient-to-br from-blue-500/20 to-blue-500/5 shadow-lg">
                   <img
-                    src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070"
+                    src="/images/services/engg/INNOVATIVE 3D ENGINEERING.jpg"
                     alt="Hextasphere Technologies"
                     className="w-full h-full object-cover"
                   />
